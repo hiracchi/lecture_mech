@@ -23,6 +23,7 @@
    prepare
    practice
    webmo-tips
+   appendix
 
 .. only:: html
 

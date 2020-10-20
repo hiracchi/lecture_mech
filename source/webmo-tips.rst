@@ -12,15 +12,15 @@ WebMOに関するTips
 分子構造の作り方
 ================
 
-- ブラウザからWebMOのURLを開き、ログインします。WebMOの "Job Manager" のページになります。
-- 新しい分子を作成するには、 :menuselection:`New Job --> Create New Job` を選択します。すると、 "Build Molecule" のページに移ります。
-- Buildアイコン |webmo-build-icon| を選ぶと、現在選択している元素とヒントが下部のステータスバーに表示されます。
-- キャンバスのどこかで左クリックすると、原子が配置されます。
-- やり直したい場合は、:menuselection:`Edit --> Undo` を選択します。
-- 原子種を変えたい婆は、Periodic Tableアイコン |webmo-periodictable-icon| をクリックして原子種を変更します。
-- 原子をクリックしてからドラッグすると、新しい原子が配置されるとともに、結合が形成されます。
-- 結合次数を変更する場合は、Adjustアイコン |webmo-adjust-icon| をクリックして *adjust* モードにしてから、結合を選択し、右クリックします。
-- 原子の混成軌道(hybridization)を変更する場合も、Adjustアイコン |webmo-adjust-icon| をクリックして *adjust* モードにしてから、原子を選択し、右クリックします。
+# ブラウザからWebMOのURLを開き、ログインします。WebMOの "Job Manager" のページになります。
+# 新しい分子を作成するには、 :menuselection:`New Job --> Create New Job` を選択します。すると、 "Build Molecule" のページに移ります。
+# Buildアイコン |webmo-build-icon| を選ぶと、現在選択している元素とヒントが下部のステータスバーに表示されます。
+# キャンバスのどこかで左クリックすると、原子が配置されます。
+# やり直したい場合は、:menuselection:`Edit --> Undo` を選択します。
+# 原子種を変えたい婆は、Periodic Tableアイコン |webmo-periodictable-icon| をクリックして原子種を変更します。
+# 原子をクリックしてからドラッグすると、新しい原子が配置されるとともに、結合が形成されます。
+# 結合次数を変更する場合は、Adjustアイコン |webmo-adjust-icon| をクリックして *adjust* モードにしてから、結合を選択し、右クリックします。
+# 原子の混成軌道(hybridization)を変更する場合も、Adjustアイコン |webmo-adjust-icon| をクリックして *adjust* モードにしてから、原子を選択し、右クリックします。
 
 
 .. tip::
