@@ -13,7 +13,7 @@ jobs:
       steps:
         - uses: actions/checkout@v2
           with:
-            ref: "master"
+            ref: "main"
             submodules: true
             fetch-depth: 1
 
@@ -29,11 +29,10 @@ jobs:
 
         - name: Build
           run: |
-            cd docs
             make html
 
         - name: Deploy
           uses: peaceiris/actions-gh-pages@v3
           with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: ./docs/build/html
+            publish_dir: ./build/html
