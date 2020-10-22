@@ -137,7 +137,7 @@ Gaussianによる構造最適化
 
    三重項酸素、一重項酸素(Δ\ :sup:`1`)、一重項酸素(Σ\ :sup:`1`)の分子軌道ダイアグラムは次の通り。
 
-   .. image:: ./img/Molekülorbital-Sauerstoff.png
+   .. image:: ./img/O2-singlet-diagram.png
 
 
 炭化水素のモデリングと構造最適化
