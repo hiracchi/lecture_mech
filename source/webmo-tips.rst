@@ -5,18 +5,26 @@
 WebMOの使い方
 *************
 
+
+はじめに
+========
+
+WebMO (https://www.webmo.net/) はwebブラウザで分子モデリングを行い、GaussianやGAMESSなどの量子化学計算パッケージへのインターフェースを備えたサーバーサイドのプログラムである。
+
+詳細は、`本家のドキュメント <https://www.webmo.net/support/documentation.html>`_ を参照のこと。
+
 分子構造の作り方
 ================
 
-# ブラウザからWebMOのURLを開き、ログインする。WebMOの "Job Manager" のページになる。
-# 新しい分子を作成するには、 :menuselection:`New Job --> Create New Job` を選択する。"Build Molecule" のページに移る。
-# Buildアイコン |webmo-build-icon| を選ぶと、現在選択している元素とヒントが下部のステータスバーに表示される。
-# キャンバスのどこかで左クリックすると、原子が配置される。
-# やり直したい場合は、:menuselection:`Edit --> Undo` を選択する。
-# 原子種を変えたい婆は、Periodic Tableアイコン |webmo-periodictable-icon| をクリックして原子種を変更する。
-# 原子をクリックしてからドラッグすると、新しい原子が配置されるとともに、結合が形成される。
-# 結合次数を変更する場合は、Adjustアイコン |webmo-adjust-icon| をクリックして *adjust* モードにしてから、結合を選択し、右クリックする。
-# 原子の混成軌道(hybridization)を変更する場合も、Adjustアイコン |webmo-adjust-icon| をクリックして *adjust* モードにしてから、原子を選択し、右クリックする。
+#. ブラウザからWebMOのURLを開き、ログインする。WebMOの "Job Manager" のページになる。
+#. 新しい分子を作成するには、 :menuselection:`New Job --> Create New Job` を選択する。"Build Molecule" のページに移る。
+#. Buildアイコン |webmo-build-icon| を選ぶと、現在選択している元素とヒントが下部のステータスバーに表示される。
+#. キャンバスのどこかで左クリックすると、原子が配置される。
+#. やり直したい場合は、:menuselection:`Edit --> Undo` を選択する。
+#. 原子種を変えたい婆は、Periodic Tableアイコン |webmo-periodictable-icon| をクリックして原子種を変更する。
+#. 原子をクリックしてからドラッグすると、新しい原子が配置されるとともに、結合が形成される。
+#. 結合次数を変更する場合は、Adjustアイコン |webmo-adjust-icon| をクリックして *adjust* モードにしてから、結合を選択し、右クリックする。
+#. 原子の混成軌道(hybridization)を変更する場合も、Adjustアイコン |webmo-adjust-icon| をクリックして *adjust* モードにしてから、原子を選択し、右クリックする。
 
 
 .. tip::
