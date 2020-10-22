@@ -23,8 +23,6 @@
    prepare
    practice
    practice2
-   webmo-tips
-   gaussian
    appendix
 
 

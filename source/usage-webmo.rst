@@ -1,20 +1,19 @@
 .. include:: def-webmo.txt
 
-
-*************
 WebMOの使い方
-*************
+=============
 
 
 はじめに
-========
+---------
 
 WebMO (https://www.webmo.net/) はwebブラウザで分子モデリングを行い、GaussianやGAMESSなどの量子化学計算パッケージへのインターフェースを備えたサーバーサイドのプログラムである。
 
 詳細は、`本家のドキュメント <https://www.webmo.net/support/documentation.html>`_ を参照のこと。
 
+
 分子構造の作り方
-================
+----------------
 
 #. ブラウザからWebMOのURLを開き、ログインする。WebMOの "Job Manager" のページになる。
 #. 新しい分子を作成するには、 :menuselection:`New Job --> Create New Job` を選択する。"Build Molecule" のページに移る。
@@ -38,7 +37,7 @@ WebMO (https://www.webmo.net/) はwebブラウザで分子モデリングを行�
 
 
 ジョブの設定と実行
-==================
+------------------
 
 - キャンバス下部にある矢印 |webmo-next-icon| をクリックすると "Configure Gamess Job Options" に移る。
 - 計算エンジンの選択が表示されている場合は、 "Gaussian" を選択する。
@@ -50,7 +49,7 @@ WebMO (https://www.webmo.net/) はwebブラウザで分子モデリングを行�
 
 
 Job Options
------------
+^^^^^^^^^^^
 
 - :guilabel:`Job Name` には任意の名前を記入します。"Job Manager" にはこの名前が表示される。
 - :guilabel:`Calculation` は計算目的とする物性を選択する。
@@ -61,20 +60,20 @@ Job Options
 
 
 Advanced
---------
+^^^^^^^^^^^
 
 - :guilabel:`Save Checkpoint File` をチェックするとCheckpointファイルを作成する。Checkpointファイルには途中計算結果などが含まれているため、再計算するときに便利。
 - :guilabel:`Cartesian Coordinates` をチェックすると原子座標をCartesian座標で入力する。
 - 分子軌道を表示したいときは、:guilabel:`Additional Keywords` に "Pop=Full GFInput"を入力する。
 
 Preview
--------
+^^^^^^^^^^^
 
 - :guilabel:`Generate` をクリックすると、Gaussianの入力ファイルが表示される。
 
 
 ジョブの管理 (Job Manager)
-==========================
+--------------------------
 
 - "Job Manager" には、実行中と完了したジョブがリストアップされる。
 - 完了したジョブは、右側の拡大鏡アイコンをクリックすると結果を見ることができる。
@@ -85,7 +84,7 @@ Preview
 
 
 結果の表示 (View Job)
-=====================
+---------------------
 
 - 左側"Actions"にある |webmo-output-icon| :guilabel:`Raw output` をクリックすると、計算の全出力(生データ)が表示される。
 - 等値面(isosurface)の値は、 |webmo-preferences-icon| をクリックして、"Preferences" ダイアログから変更できる。

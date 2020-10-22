@@ -20,3 +20,8 @@
 ```
 1 a.u. = 627.5095 kcal mol-1 = 27.2114 eV
 ```
+
+.. include:: usage-webmo.rst
+
+
+.. include :: usage-gaussian.rst
