@@ -1,0 +1,9 @@
+.. |img_success| image:: img/success.png
+
+.. |html_pagebreak| raw:: html
+
+   <div style="page-break-after:always" />
+
+.. |html_break| raw:: html
+
+   <br />
