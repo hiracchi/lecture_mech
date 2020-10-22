@@ -1,0 +1,529 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. 量子化学計算の基礎演習 &mdash; 創造設計演習 2020 ドキュメント</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="3. 量子化学計算の応用演習" href="practice2.html" />
+    <link rel="prev" title="1. 準備" href="prepare.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> 創造設計演習
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020.10.20
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="prepare.html">1. 準備</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. 量子化学計算の基礎演習</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">2.1. ホルムアルデヒドの電子状態計算</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">2.1.1. ホルムアルデヒドの化学的性質</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">2.1.2. ホルムアルデヒドの全エネルギーを求める</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">2.1.3. ホルムアルデヒドの双極子モーメントを表示する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">2.1.4. ホルムアルデヒドの分子軌道を表示する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">2.1.5. ホルムアルデヒドの電子密度を表示する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">2.1.6. ホルムアルデヒドの静電ポテンシャルを表示する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ir-raman">2.1.7. ホルムアルデヒドのIR, Ramanスペクトルを予測する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nmr">2.1.8. ホルムアルデヒドのNMRスペクトルを予測する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uv-vis">2.1.9. ホルムアルデヒドのUV-visスペクトルを予測する</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#n2">2.2. 窒素分子(N<sub>2</sub>)のモデリングと構造最適化</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id9">2.2.1. 一点計算による構造最適化</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gaussian">2.2.2. Gaussianによる構造最適化</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">2.3. 2原子分子の結合距離</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">2.4. 炭化水素のモデリングと構造最適化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">2.5. 環状分子のモデリングと構造最適化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#xylene">2.6. キシレン(xylene)幾何異性体のエネルギー比較</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="practice2.html">3. 量子化学計算の応用演習</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">4. 付録</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">創造設計演習</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">2. </span>量子化学計算の基礎演習</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/practice.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1><span class="section-number">2. </span>量子化学計算の基礎演習<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="id2">
+<h2><span class="section-number">2.1. </span>ホルムアルデヒドの電子状態計算<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>はじめに、ホルムアルデヒド(formaldehyde; CH<sub>2</sub>O)の電子状態を計算してみる。
+原子の座標を固定した計算を1点(single point)計算とよぶ。
+本演習では、量子化学計算プログラムに <em>Gaussian</em> を使用する。</p>
+<div class="section" id="id3">
+<h3><span class="section-number">2.1.1. </span>ホルムアルデヒドの化学的性質<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ホルムアルデヒドの化学的性質をおさえておく。</p>
+<ul class="simple">
+<li><p>ホルムアルデヒド</p>
+<ul>
+<li><p>化学式: CH<sub>2</sub>O</p></li>
+<li><p>水に可溶: → 極性分子</p></li>
+</ul>
+</li>
+</ul>
+<img alt="_images/CH2O_chemstruct.png" id="ch2o-chemstruct" src="_images/CH2O_chemstruct.png" />
+<img alt="_images/CH2O_image.png" id="ch2o-image" src="_images/CH2O_image.png" />
+</div>
+<div class="section" id="id4">
+<h3><span class="section-number">2.1.2. </span>ホルムアルデヒドの全エネルギーを求める<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li><p>以下の内容をコピーしてメモ帳などにペーストし、適当な名前(例えば&quot;CH2O.gjf&quot;)で保存する。</p></li>
+</ul>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-number">リスト 2.1 </span><span class="caption-text">CH2O.gjf</span><a class="headerlink" href="#id13" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-none notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span>#P B3LYP/6-31G(d) SP Pop=Full GFInput
+
+CH2O
+
+0 1
+C  0.00000000  0.00000000  0.00000000
+O  0.00000000  0.00000000  1.20651800
+H  0.00000000  0.93772900 -0.59467900
+H -0.00000000 -0.93772900 -0.59467900
+</pre></div>
+</td></tr></table></div>
+</div>
+<ul class="simple">
+<li><p>WebMOの&quot;Job Manager&quot;で、 <span class="menuselection">New Job ‣ Execute Input File</span> を選択する。&quot;Execute Input File&quot; に移る。</p></li>
+<li><p><span class="guilabel">Input File</span> タブで、下部にある <span class="guilabel">ファイルを選択</span> ボタンから、上記で保存したファイルを選択してアップロードする。内容が正しくアップロードされているか確認する。</p></li>
+<li><p><span class="guilabel">Job Name</span> には任意の名前(例えば&quot;CH2O sp&quot;)を入力する。</p></li>
+<li><p><span class="guilabel">Choose Engine</span> タブをクリックし、Engineとして&quot;Gaussian&quot;を選択する。</p></li>
+<li><p><span class="guilabel">Choose Engine</span> タブは自由にメモが書き込める(入力しなくても良い)。</p></li>
+<li><p><span class="guilabel">Execute Job</span> ボタンをクリックすると計算が &quot;Job Manager&quot; に登録され、実行される。</p></li>
+<li><p>&quot;Job Manager&quot; の該当するジョブが計算完了(&quot;Complete&quot;)したのを確認する。 未完了の場合は、 <img alt="webmo-refresh-icon" src="_images/webmo-refresh-icon.gif" /> <span class="guilabel">Refresh</span> をクリックしてジョブの状況を随時更新する。</p></li>
+<li><p>該当するジョブの <img alt="webmo-output-icon" src="_images/webmo-output.gif" /> をクリックして、計算結果を確認する。</p></li>
+<li><p>全エネルギーは &quot;Calculated Quantities&quot;の&quot;Overview&quot;にある、&quot;RB3LYP Energy&quot;に記載されている。</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>入力ファイルのルートセクションにある &quot;B3LYP/6-31G(d)&quot; は、計算理論と基底関数を指定しており、シミュレーションの品質を大きく決定する。</p>
+<p>シミュレーションの品質を向上させると、それに応じて大きな計算資源(計算時間、メモリ・ディスク使用量)も要求される。</p>
+<p>今後、特に指定が無ければ &quot;B3LYP/6-31G(d)&quot; を使用することを勧める。
+WebMOでは、&quot;Job Options&quot; で &quot;Theory&quot; には &quot;B3LYP&quot; を、 &quot;Basis Set&quot; には &quot;6-31G(d)&quot; を指定する。</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h3><span class="section-number">2.1.3. </span>ホルムアルデヒドの双極子モーメントを表示する<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li><p>&quot;Overview&quot;の”Dipole Moment&quot;にある <img alt="webmo-output-icon" src="_images/webmo-output.gif" /> をクリックする。ホルムアルデヒドの場合、炭素から酸素へ矢印が描かれていることを確認する。</p></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h3><span class="section-number">2.1.4. </span>ホルムアルデヒドの分子軌道を表示する<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li><p>&quot;Molecular Orbitals&quot; の <img alt="webmo-output-icon" src="_images/webmo-output.gif" /> をクリックすると、分子軌道が可視化される。</p></li>
+<li><p>&quot;Orbital&quot; はエネルギーが低い順番にナンバリングされている。</p></li>
+<li><p>&quot;Occupancy&quot; は該当する分子軌道に入っている電子数を表している。2つの電子が入っている分子軌道を占有軌道、電子が入っていない分子軌道を空軌道とよぶ。</p></li>
+<li><p>最もエネルギーの高い占有軌道をHOMO (Highest Occupaied Molecular Orbital)、最もエネルギーの低い空軌道をLUMO (Lowest Unoccupaied Molecular Orbital)とよぶ。これらはフロンティア軌道ともよばれ、様々な化学反応に関与することが知られている。</p></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h3><span class="section-number">2.1.5. </span>ホルムアルデヒドの電子密度を表示する<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li><p>&quot;Electron density&quot; の <img alt="webmo-output-icon" src="_images/webmo-output.gif" /> をクリックすると、等電子密度面が可視化される。</p></li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h3><span class="section-number">2.1.6. </span>ホルムアルデヒドの静電ポテンシャルを表示する<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li><p>&quot;Electrostatic potential&quot; の <img alt="webmo-output-icon" src="_images/webmo-output.gif" /> をクリックすると、分子表面に静電ポテンシャルが可視化される。</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>&quot;Job Manager&quot;に戻るには 左側の <img alt="webmo-home-icon" src="_images/webmo-home-icon.gif" /> &quot;Job Manager&quot; をクリックする。</p>
+</div>
+</div>
+<div class="section" id="ir-raman">
+<h3><span class="section-number">2.1.7. </span>ホルムアルデヒドのIR, Ramanスペクトルを予測する<a class="headerlink" href="#ir-raman" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li><p>&quot;Job Option&quot; の &quot;Calculation&quot; で &quot;Vibrational Frequencies&quot; を選択する。もしくはGaussianのルートセクションに &quot;FREQ&quot; キーワードを追加する。</p></li>
+<li><p>計算が完了したら、&quot;Vibrational Modes&quot; にある &quot;Raman Spectrum&quot; や &quot;IR Spectrum&quot; の  <img alt="webmo-output-icon" src="_images/webmo-output.gif" /> をクリックすると &quot;Data viewer&quot; にスペクトルが描画される。</p></li>
+<li><p>各振動モードの <img alt="webmo-animate-icon" src="_images/webmo-animate-icon.gif" /> をクリックすると、振動モードがアニメーション表示される。止めたい場合は、左の停止ボタンをクリックする。</p></li>
+</ul>
+</div>
+<div class="section" id="nmr">
+<h3><span class="section-number">2.1.8. </span>ホルムアルデヒドのNMRスペクトルを予測する<a class="headerlink" href="#nmr" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li><p>&quot;Job Option&quot; の &quot;Calculation&quot; で &quot;NMR&quot; を選択する。もしくはGaussianのルートセクションに &quot;NMR&quot; キーワードを追加する。</p></li>
+<li><p>計算が完了したら、&quot;Absolute NMR Shifts&quot; にある &quot; <sup>1</sup>H NMR Spectrum&quot; や &quot; <sup>13</sup>C NMR Spectrum&quot; の  <img alt="webmo-output-icon" src="_images/webmo-output.gif" /> をクリックすると &quot;Data viewer&quot; にスペクトルが描画される。</p></li>
+</ul>
+</div>
+<div class="section" id="uv-vis">
+<h3><span class="section-number">2.1.9. </span>ホルムアルデヒドのUV-visスペクトルを予測する<a class="headerlink" href="#uv-vis" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li><p>&quot;Job Option&quot; の &quot;Calculation&quot; で &quot;Excited states and UV-VIS&quot; を選択する。UV-visスペクトルには励起状態計算が必要なため、自動的に &quot;Excited State Method&quot; に &quot;CIS&quot;が選択される。</p></li>
+<li><p>&quot;Excited States&quot; にある &quot;UV-Vis Spectrum&quot; の <img alt="webmo-output-icon" src="_images/webmo-output.gif" /> をクリックすると &quot;Data viewer&quot; にスペクトルが描画される。</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="n2">
+<h2><span class="section-number">2.2. </span>窒素分子(N<sub>2</sub>)のモデリングと構造最適化<a class="headerlink" href="#n2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id9">
+<h3><span class="section-number">2.2.1. </span>一点計算による構造最適化<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>0.8 Å から2.0 Å まで全エネルギーを計算し、横軸に原子間距離、縦軸に全エネルギーをプロットしてみる。
+まずは、原子間距離を0.1 Å刻みで求め、極小値付近では0.1 Å刻みで、極小値を0.1 Åの桁まで求めよ。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>最もエネルギーが低い原子座標を求めることを構造最適化計算とよぶ。</p>
+</div>
+</div>
+<div class="section" id="gaussian">
+<h3><span class="section-number">2.2.2. </span>Gaussianによる構造最適化<a class="headerlink" href="#gaussian" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>2つの窒素原子を任意の距離に置き、Gaussianによる構造最適化計算を行う。
+”Job Option&quot; の &quot;Calculation&quot; にて、&quot;Geometory Optimization&quot; を選択して実行する。
+得られた原子間距離とプロットによって得られた原子間距離が一致していることを確認する。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>WebMOで原子間距離や角度、二面角を調べるには、 <img alt="webmo-adjust-icon" src="_images/webmo-adjust-icon.png" /> をクリックしてから、調べたい原子を順にクリックするとステータスライン(下部)に表示される。</p>
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2><span class="section-number">2.3. </span>2原子分子の結合距離<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>次の2原子分子をモデリングし、構造最適化を行う。各分子の全エネルギー、原子間距離、双極子モーメントを求めよ。</p>
+<table class="docutils align-default" id="id14">
+<caption><span class="caption-number">表 2.1 </span><span class="caption-text">2原子分子</span><a class="headerlink" href="#id14" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>分子</p></th>
+<th class="head"><p>全エネルギー / a.u.</p></th>
+<th class="head"><p>原子間距離 / Å</p></th>
+<th class="head"><p>双極子モーメント / Debye</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>N<sub>2</sub></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CO</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>O<sub>2</sub> (三重項酸素)</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>O<sub>2</sub> (一重項酸素)</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>三重項酸素、一重項酸素(Δ<sup>1</sup>)、一重項酸素(Σ<sup>1</sup>)の分子軌道ダイアグラムは次の通り。</p>
+<img alt="_images/O2-singlet-diagram.png" src="_images/O2-singlet-diagram.png" />
+</div>
+</div>
+<div class="section" id="id11">
+<h2><span class="section-number">2.4. </span>炭化水素のモデリングと構造最適化<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>以下の分子のモデリング並びに構造最適化計算を行う。
+C-C結合距離と結合次数の関係を確認する。</p>
+<table class="docutils align-default" id="id15">
+<caption><span class="caption-number">表 2.2 </span><span class="caption-text">2原子分子</span><a class="headerlink" href="#id15" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>分子</p></th>
+<th class="head"><p>全エネルギー / a.u.</p></th>
+<th class="head"><p>C-C 原子間距離 / Å</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>C<sub>2</sub>H<sub>6</sub></p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>C<sub>2</sub>H<sub>4</sub></p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>C<sub>2</sub>H<sub>2</sub></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id12">
+<h2><span class="section-number">2.5. </span>環状分子のモデリングと構造最適化<a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>以下の分子のモデリング並びに構造最適化計算を行う。
+C<sub>6</sub>H<sub>6</sub> はいわゆるベンゼンである。平面構造を取っているか確認する。</p>
+<table class="docutils align-default" id="id16">
+<caption><span class="caption-number">表 2.3 </span><span class="caption-text">環状分子</span><a class="headerlink" href="#id16" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>分子</p></th>
+<th class="head"><p>全エネルギー / a.u.</p></th>
+<th class="head"><p>構造の特徴</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>C<sub>6</sub>H<sub>12</sub></p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>C<sub>6</sub>H<sub>6</sub></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xylene">
+<h2><span class="section-number">2.6. </span>キシレン(xylene)幾何異性体のエネルギー比較<a class="headerlink" href="#xylene" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>キシレンには3種類の異性体、o-キシレン、m-キシレン、p-キシレンが存在する。
+どの幾何異性体が安定か。また、その理由を考察すること。</p>
+<table class="docutils align-default" id="id17">
+<caption><span class="caption-number">表 2.4 </span><span class="caption-text">キシレン</span><a class="headerlink" href="#id17" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>分子</p></th>
+<th class="head"><p>全エネルギー / a.u.</p></th>
+<th class="head"><p>o-xyleneとのエネルギー差 / kcal mol <sup>-1</sup></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>o-xylene</p></td>
+<td></td>
+<td><p>---</p></td>
+</tr>
+<tr class="row-odd"><td><p>m-xylene</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>p-xylene</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<img alt="_images/xylenes_ja.png" id="xylene-isomers" src="_images/xylenes_ja.png" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="practice2.html" class="btn btn-neutral float-right" title="3. 量子化学計算の応用演習" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="prepare.html" class="btn btn-neutral float-left" title="1. 準備" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 著作権 2020, Toshiyuki Hirano
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

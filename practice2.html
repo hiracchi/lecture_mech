@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3. 量子化学計算の応用演習 &mdash; 創造設計演習 2020 ドキュメント</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="4. 付録" href="appendix.html" />
+    <link rel="prev" title="2. 量子化学計算の基礎演習" href="practice.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> 創造設計演習
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020.10.20
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="prepare.html">1. 準備</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practice.html">2. 量子化学計算の基礎演習</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. 量子化学計算の応用演習</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">3.1. 相互作用解析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">3.2. ナフタレンの反応予測</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">3.3. 遷移状態探索</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">4. 付録</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">創造設計演習</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">3. </span>量子化学計算の応用演習</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/practice2.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1><span class="section-number">3. </span>量子化学計算の応用演習<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="id2">
+<h2><span class="section-number">3.1. </span>相互作用解析<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>量子化学計算(シミュレーション)の利点は、実在しない(実験室では合成・単離が不可能な)分子も取り扱うことができることである。
+領域Aと領域Bから構成される系(AB)において、領域A、B間の相互作用エネルギーは以下の式によって求められる。</p>
+<div class="math notranslate nohighlight">
+\[E[AB] = E[A] + E[B] + E_{int}\]</div>
+<p>ここでは、キシレン異性体におけるメチル基の相互作用エネルギーを求めよう。
+CH<sub>3</sub>-C<sub>6</sub>H<sub>5</sub> を領域A、メチル基(CH<sub>3</sub>-)を領域Bとして全エネルギーを求めれば良い。</p>
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-number">表 3.1 </span><span class="caption-text">キシレンの相互作用エネルギー</span><a class="headerlink" href="#id5" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>分子</p></th>
+<th class="head"><p>E[AB] / a.u.</p></th>
+<th class="head"><p>E[A]] / a.u.</p></th>
+<th class="head"><p>E[B] / a.u.</p></th>
+<th class="head"><p>E <sub>int</sub> / kcal mol <sup>-1</sup></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>o-xylene</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>m-xylene</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>p-xylene</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">3.2. </span>ナフタレンの反応予測<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ナフタレン(naphthalene)に 求核試薬NH<sub>2</sub><sup>-</sup>, 求電子試薬NO<sub>2</sub><sup>+</sup> を 反応させる(置換反応)ことを考えよう。
+ナフタレンの対称性から、付加できる場所はα位(1位)とβ位(2位)だけとなる。</p>
+<img alt="_images/naphthalene.png" id="naphthalene" src="_images/naphthalene.png" />
+<p>まず、ナフタレンの構造最適化計算を行い、α位(1位)とβ位(2位)炭素の原子電荷(Mulliken電荷)を求める。</p>
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-number">表 3.2 </span><span class="caption-text">ナフタレンの原子電荷</span><a class="headerlink" href="#id6" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>分子</p></th>
+<th class="head"><p>Mulliken電荷</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1位炭素</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>2位炭素</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>また、分子軌道(HOMO、LUMO)と静電ポテンシャルを描いてみる。これらの結果から、naphthylamine、nitronaphthalene はそれぞれどの異性体が生成しやすいかを予想してみる。</p>
+<p>次に、実際にnaphthylamine、nitronaphthalene の異性体の構造最適化計算を行い、どちらの異性体の全エネルギーが低いかを求めよう。</p>
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-number">表 3.3 </span><span class="caption-text">naphthylamine</span><a class="headerlink" href="#id7" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>分子</p></th>
+<th class="head"><p>全エネルギー / a.u.</p></th>
+<th class="head"><p>エネルギー差 / kcal mol <sup>-1</sup></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1-naphthylamine</p></td>
+<td></td>
+<td><p>---</p></td>
+</tr>
+<tr class="row-odd"><td><p>2-naphthylamine</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id8">
+<caption><span class="caption-number">表 3.4 </span><span class="caption-text">nitronaphthalene</span><a class="headerlink" href="#id8" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>分子</p></th>
+<th class="head"><p>全エネルギー / a.u.</p></th>
+<th class="head"><p>エネルギー差 / kcal mol <sup>-1</sup></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1-nitronaphthalene</p></td>
+<td></td>
+<td><p>---</p></td>
+</tr>
+<tr class="row-odd"><td><p>2-nitronaphthalene</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id4">
+<h2><span class="section-number">3.3. </span>遷移状態探索<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ブタジエンとエチレンはDiels-Alder反応により、シクロヘキセンを与える。</p>
+<img alt="_images/diels-alder.png" id="diels-alder-reaction" src="_images/diels-alder.png" />
+<p>この反応はブタジエンのHOMOとエチレンのLUMOの相互作用により6員環構造が形成される反応であることが知られている。</p>
+<img alt="_images/diels-alder-MO.png" id="mos-of-the-diels-alder-reaction" src="_images/diels-alder-MO.png" />
+<p>この反応経路を観察しよう。</p>
+<ol class="arabic">
+<li><p>まず反応物のブタジエンとエチレン、そして生成物のシクロヘキセンをモデリングする。</p></li>
+<li><p>ブタジエンとエチレンから反応物の構造を作成する。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>ブタジエンの構造を固定してエチレンの構造最適化をするとうまく出来る。</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>QST2法 (Saddle Calculation) により遷移状態を求める</p></li>
+</ol>
+<p>それぞれの分子軌道を観察してみるとともに、
+活性化エネルギーの実験値 27.5 kcal/mol<sup>-1</sup> と計算で求めた活性化エネルギーを比較してみよう。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="appendix.html" class="btn btn-neutral float-right" title="4. 付録" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="practice.html" class="btn btn-neutral float-left" title="2. 量子化学計算の基礎演習" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 著作権 2020, Toshiyuki Hirano
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

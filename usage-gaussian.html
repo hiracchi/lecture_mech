@@ -1,0 +1,280 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Gaussianの使い方 &mdash; 創造設計演習 2020 ドキュメント</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> 創造設計演習
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020.10.20
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="prepare.html">1. 準備</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practice.html">2. 量子化学計算の基礎演習</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practice2.html">3. 量子化学計算の応用演習</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">4. 付録</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">創造設計演習</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Gaussianの使い方</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/usage-gaussian.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gaussian">
+<h1>Gaussianの使い方<a class="headerlink" href="#gaussian" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="id1">
+<h2>入力ファイル<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id2">
+<h3>入力ファイルの形式<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ホルムアルデヒドの入力ファイルを以下に示す。</p>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">CH2O.gjf</span><a class="headerlink" href="#id7" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-none notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span>%chk=form.chk
+#P B3LYP/6-31G(d) SP Pop=Full GFInput
+
+CH2O
+
+0 1
+C  0.00000000  0.00000000  0.00000000
+O  0.00000000  0.00000000  1.20651800
+H  0.00000000  0.93772900 -0.59467900
+H -0.00000000 -0.93772900 -0.59467900
+</pre></div>
+</td></tr></table></div>
+</div>
+<ul class="simple">
+<li><p>(1行目) &quot;link 0 コマンドセクション&quot;とよばれ、チェックポイントファイルの指定や並列計算の指定を行う。記入しなくても構わない。</p></li>
+<li><p>(2行目) &quot;#&quot;から始まる行はルートセクションとよばれ、実行するジョブのタイプを指定する。ルートセクションは、 <strong>必ず空行で終える</strong> 。</p></li>
+<li><p>(4行目) ルートセクションに続き、タイトルセクションを入力する。ここには、任意のコメントを記述する。最大2行まで入力できる。 <strong>必ず空行で終える</strong> 。</p></li>
+<li><p>(6行目) 続いて、分子の電荷とスピン多重度を入力する。</p></li>
+<li><p>(7-11行目) 次に分子指定セクションを入力する。cartesianまたはz-matrixで入力する。仮に座標が整数値であっても浮動小数点型で計算させるように(計算精度確保のため)、小数点を入力した方が良い。 <strong>最後は空行で終える</strong> 。</p></li>
+<li><p>計算内容によっては、以降セクションを追加する。各セクションは空行で終える。</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>Gaussian入力ファイルの拡張子は、<code class="docutils literal notranslate"><span class="pre">.gjf</span></code> (Gaussian Job File) が推奨されているようである(Windows版でのデフォルト)が、 <code class="docutils literal notranslate"><span class="pre">.com</span></code> なども散見する。</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>スピン多重度<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>スピン多重度は以下の式により求められる。</p>
+<div class="math notranslate nohighlight">
+\[スピン多重度=2S+1\]</div>
+<p>ここで <span class="math notranslate nohighlight">\(S\)</span> は分子の全スピンをあらわし、 <span class="math notranslate nohighlight">\(α=+1/2, β=-1/2\)</span> である。</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>出力ファイル<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="mulliken">
+<h3>Mulliken電荷<a class="headerlink" href="#mulliken" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Mullikenの電子数解析において、原子 <span class="math notranslate nohighlight">\(A\)</span> に属する電子数 <span class="math notranslate nohighlight">\(Q_{A}\)</span> は以下の式によって得られる。</p>
+<div class="math notranslate nohighlight">
+\[Q_{A} = \sum_{p}\sum_{q \in A}{P_{pq} S_{pq}}\]</div>
+<p>ここで <span class="math notranslate nohighlight">\(\boldsymbol{P}\)</span> は密度行列、 <span class="math notranslate nohighlight">\({\boldsymbol{S}}\)</span> は重なり積分をあらわす。
+したがって原子 <span class="math notranslate nohighlight">\(A\)</span> のMulliken電荷 <span class="math notranslate nohighlight">\({q_{A}}\)</span> は、原子核の電荷 <span class="math notranslate nohighlight">\(Z_{A}\)</span> を用いて次のようにあらわされる。</p>
+<div class="math notranslate nohighlight">
+\[q_{A} = Z_{A} - Q_{A}\]</div>
+<p>Mulliken電荷は基底関数依存性があるものの、簡単に計算できるため、計算結果のチェックに便利である。</p>
+<p>Gaussianでは、&quot;Mulliken charges:&quot;以下に出力される。</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>さらなる利活用のために<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Gaussianは非常に多機能である。キーワードは <a class="reference external" href="https://gaussian.com/keywords/">Gaussianのページ</a> (日本語は <a class="reference external" href="https://www.hpc.co.jp/chem/software/gaussian/help/keywords/">HPCシステムズ(株)のページ</a> )を参照のこと。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 著作権 2020, Toshiyuki Hirano
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

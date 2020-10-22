@@ -1,0 +1,422 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4. 付録 &mdash; 創造設計演習 2020 ドキュメント</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="prev" title="3. 量子化学計算の応用演習" href="practice2.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> 創造設計演習
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020.10.20
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="prepare.html">1. 準備</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practice.html">2. 量子化学計算の基礎演習</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practice2.html">3. 量子化学計算の応用演習</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. 付録</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">4.1. 用語集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">4.2. 量子化学計算で使われる単位</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#webmo">4.3. WebMOの使い方</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">4.3.1. はじめに</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">4.3.2. 分子構造の作り方</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">4.3.3. ジョブの設定と実行</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#job-options">4.3.3.1. Job Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#advanced">4.3.3.2. Advanced</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#preview">4.3.3.3. Preview</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#job-manager">4.3.4. ジョブの管理 (Job Manager)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#view-job">4.3.5. 結果の表示 (View Job)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gaussian">4.4. Gaussianの使い方</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id8">4.4.1. 入力ファイル</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id9">4.4.1.1. 入力ファイルの形式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">4.4.1.2. スピン多重度</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">4.4.2. 出力ファイル</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mulliken">4.4.2.1. Mulliken電荷</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">4.4.3. さらなる利活用のために</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">創造設計演習</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">4. </span>付録</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/appendix.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1><span class="section-number">4. </span>付録<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="id2">
+<h2><span class="section-number">4.1. </span>用語集<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<dl class="glossary simple">
+<dt id="term-HOMO-Highest-Occupied-Molecular-Orbital">HOMO(Highest Occupied Molecular Orbital)</dt><dd><p>最もエネルギーの高い占有軌道</p>
+</dd>
+<dt id="term-LUMO-Lowest-Un-occupied-Molecular-Orbital">LUMO(Lowest Un-occupied Molecular Orbital)</dt><dd><p>最もエネルギーの低い空軌道</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">4.2. </span>量子化学計算で使われる単位<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">1</span> <span class="pre">a.u.</span> <span class="pre">=</span> <span class="pre">627.5095</span> <span class="pre">kcal</span> <span class="pre">mol-1</span> <span class="pre">=</span> <span class="pre">27.2114</span> <span class="pre">eV</span>
+<span class="pre">`</span></code></p>
+</div>
+<div class="section" id="webmo">
+<h2><span class="section-number">4.3. </span>WebMOの使い方<a class="headerlink" href="#webmo" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id4">
+<h3><span class="section-number">4.3.1. </span>はじめに<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>WebMO (<a class="reference external" href="https://www.webmo.net/">https://www.webmo.net/</a>) はwebブラウザで分子モデリングを行い、GaussianやGAMESSなどの量子化学計算パッケージへのインターフェースを備えたサーバーサイドのプログラムである。</p>
+<p>詳細は、<a class="reference external" href="https://www.webmo.net/support/documentation.html">本家のドキュメント</a> を参照のこと。</p>
+</div>
+<div class="section" id="id6">
+<h3><span class="section-number">4.3.2. </span>分子構造の作り方<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li><p>ブラウザからWebMOのURLを開き、ログインする。WebMOの &quot;Job Manager&quot; のページになる。</p></li>
+<li><p>新しい分子を作成するには、 <span class="menuselection">New Job ‣ Create New Job</span> を選択する。&quot;Build Molecule&quot; のページに移る。</p></li>
+<li><p>Buildアイコン <img alt="webmo-build-icon" src="_images/webmo-build-icon.png" /> を選ぶと、現在選択している元素とヒントが下部のステータスバーに表示される。</p></li>
+<li><p>キャンバスのどこかで左クリックすると、原子が配置される。</p></li>
+<li><p>やり直したい場合は、<span class="menuselection">Edit ‣ Undo</span> を選択する。</p></li>
+<li><p>原子種を変えたい婆は、Periodic Tableアイコン <img alt="webmo-periodictable-icon" src="_images/webmo-periodictable-icon.png" /> をクリックして原子種を変更する。</p></li>
+<li><p>原子をクリックしてからドラッグすると、新しい原子が配置されるとともに、結合が形成される。</p></li>
+<li><p>結合次数を変更する場合は、Adjustアイコン <img alt="webmo-adjust-icon" src="_images/webmo-adjust-icon.png" /> をクリックして <em>adjust</em> モードにしてから、結合を選択し、右クリックする。</p></li>
+<li><p>原子の混成軌道(hybridization)を変更する場合も、Adjustアイコン <img alt="webmo-adjust-icon" src="_images/webmo-adjust-icon.png" /> をクリックして <em>adjust</em> モードにしてから、原子を選択し、右クリックする。</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">ちなみに</p>
+<p>水素を自動的に付加したい場合は、<span class="menuselection">Cleanup ‣ Add Hydrogens</span> を選択する。ただし、混成軌道や結合次数を正しく設定していない場合は、失敗する。</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">ちなみに</p>
+<p>構造を分子力学方を用いた構造最適化する場合は、Comprehensive Cleanup using Mechanicsアイコン <img alt="webmo-comprehensive-cleanup-icon" src="_images/webmo-comprehensive-cleanup-icon.png" /> をクリックする。</p>
+</div>
+</div>
+<div class="section" id="id7">
+<h3><span class="section-number">4.3.3. </span>ジョブの設定と実行<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li><p>キャンバス下部にある矢印 <img alt="webmo-next-icon" src="_images/webmo-next.gif" /> をクリックすると &quot;Configure Gamess Job Options&quot; に移る。</p></li>
+<li><p>計算エンジンの選択が表示されている場合は、 &quot;Gaussian&quot; を選択する。</p></li>
+<li><p>各タブをクリックして計算条件を設定する。計算条件を設定した後、下部にある矢印 <img alt="webmo-next-icon" src="_images/webmo-next.gif" /> をクリックすると計算が &quot;Job Manager&quot; に登録される。</p></li>
+</ul>
+<div class="admonition attention">
+<p class="admonition-title">注意</p>
+<p>ジョブの実行に際し、ローカルルールがある場合はそれに従うこと。</p>
+</div>
+<div class="section" id="job-options">
+<h4><span class="section-number">4.3.3.1. </span>Job Options<a class="headerlink" href="#job-options" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<ul class="simple">
+<li><p><span class="guilabel">Job Name</span> には任意の名前を記入します。&quot;Job Manager&quot; にはこの名前が表示される。</p></li>
+<li><p><span class="guilabel">Calculation</span> は計算目的とする物性を選択する。</p></li>
+<li><p><span class="guilabel">Theory</span> では理論的手法を選択する。</p></li>
+<li><p><span class="guilabel">Basis Set</span> では基底関数セットを選択する。</p></li>
+<li><p><span class="guilabel">Charge</span> は分子の電荷を入力する。</p></li>
+<li><p><span class="guilabel">Multiplicity</span> はスピン多重度を設定する。</p></li>
+</ul>
+</div>
+<div class="section" id="advanced">
+<h4><span class="section-number">4.3.3.2. </span>Advanced<a class="headerlink" href="#advanced" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<ul class="simple">
+<li><p><span class="guilabel">Save Checkpoint File</span> をチェックするとCheckpointファイルを作成する。Checkpointファイルには途中計算結果などが含まれているため、再計算するときに便利。</p></li>
+<li><p><span class="guilabel">Cartesian Coordinates</span> をチェックすると原子座標をCartesian座標で入力する。</p></li>
+<li><p>分子軌道を表示したいときは、<span class="guilabel">Additional Keywords</span> に &quot;Pop=Full GFInput&quot;を入力する。</p></li>
+</ul>
+</div>
+<div class="section" id="preview">
+<h4><span class="section-number">4.3.3.3. </span>Preview<a class="headerlink" href="#preview" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<ul class="simple">
+<li><p><span class="guilabel">Generate</span> をクリックすると、Gaussianの入力ファイルが表示される。</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="job-manager">
+<h3><span class="section-number">4.3.4. </span>ジョブの管理 (Job Manager)<a class="headerlink" href="#job-manager" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li><p>&quot;Job Manager&quot; には、実行中と完了したジョブがリストアップされる。</p></li>
+<li><p>完了したジョブは、右側の拡大鏡アイコンをクリックすると結果を見ることができる。</p></li>
+</ul>
+<div class="admonition attention">
+<p class="admonition-title">注意</p>
+<p>http(s)の特性上、サーバー側から更新をpush通知することができず、webページの自動更新には限界がある。 <img alt="webmo-refresh-icon" src="_images/webmo-refresh-icon.gif" /> <span class="guilabel">Refresh</span> をクリックしてジョブの状況を随時更新すること。</p>
+</div>
+</div>
+<div class="section" id="view-job">
+<h3><span class="section-number">4.3.5. </span>結果の表示 (View Job)<a class="headerlink" href="#view-job" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li><p>左側&quot;Actions&quot;にある <img alt="webmo-output-icon" src="_images/webmo-output.gif" /> <span class="guilabel">Raw output</span> をクリックすると、計算の全出力(生データ)が表示される。</p></li>
+<li><p>等値面(isosurface)の値は、 <img alt="webmo-preferences-icon" src="_images/webmo-preferences-icon.png" /> をクリックして、&quot;Preferences&quot; ダイアログから変更できる。</p></li>
+<li><p>&quot;Natural Population Analysis&quot; では、 <img alt="webmo-output-icon" src="_images/webmo-output.gif" /> をクリックすると、電荷に応じて原子が色付けされる。</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="gaussian">
+<h2><span class="section-number">4.4. </span>Gaussianの使い方<a class="headerlink" href="#gaussian" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id8">
+<h3><span class="section-number">4.4.1. </span>入力ファイル<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id9">
+<h4><span class="section-number">4.4.1.1. </span>入力ファイルの形式<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>ホルムアルデヒドの入力ファイルを以下に示す。</p>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-number">リスト 4.1 </span><span class="caption-text">CH2O.gjf</span><a class="headerlink" href="#id14" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-none notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span>%chk=form.chk
+#P B3LYP/6-31G(d) SP Pop=Full GFInput
+
+CH2O
+
+0 1
+C  0.00000000  0.00000000  0.00000000
+O  0.00000000  0.00000000  1.20651800
+H  0.00000000  0.93772900 -0.59467900
+H -0.00000000 -0.93772900 -0.59467900
+</pre></div>
+</td></tr></table></div>
+</div>
+<ul class="simple">
+<li><p>(1行目) &quot;link 0 コマンドセクション&quot;とよばれ、チェックポイントファイルの指定や並列計算の指定を行う。記入しなくても構わない。</p></li>
+<li><p>(2行目) &quot;#&quot;から始まる行はルートセクションとよばれ、実行するジョブのタイプを指定する。ルートセクションは、 <strong>必ず空行で終える</strong> 。</p></li>
+<li><p>(4行目) ルートセクションに続き、タイトルセクションを入力する。ここには、任意のコメントを記述する。最大2行まで入力できる。 <strong>必ず空行で終える</strong> 。</p></li>
+<li><p>(6行目) 続いて、分子の電荷とスピン多重度を入力する。</p></li>
+<li><p>(7-11行目) 次に分子指定セクションを入力する。cartesianまたはz-matrixで入力する。仮に座標が整数値であっても浮動小数点型で計算させるように(計算精度確保のため)、小数点を入力した方が良い。 <strong>最後は空行で終える</strong> 。</p></li>
+<li><p>計算内容によっては、以降セクションを追加する。各セクションは空行で終える。</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>Gaussian入力ファイルの拡張子は、<code class="docutils literal notranslate"><span class="pre">.gjf</span></code> (Gaussian Job File) が推奨されているようである(Windows版でのデフォルト)が、 <code class="docutils literal notranslate"><span class="pre">.com</span></code> なども散見する。</p>
+</div>
+</div>
+<div class="section" id="id10">
+<h4><span class="section-number">4.4.1.2. </span>スピン多重度<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>スピン多重度は以下の式により求められる。</p>
+<div class="math notranslate nohighlight">
+\[スピン多重度=2S+1\]</div>
+<p>ここで <span class="math notranslate nohighlight">\(S\)</span> は分子の全スピンをあらわし、 <span class="math notranslate nohighlight">\(α=+1/2, β=-1/2\)</span> である。</p>
+</div>
+</div>
+<div class="section" id="id11">
+<h3><span class="section-number">4.4.2. </span>出力ファイル<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="mulliken">
+<h4><span class="section-number">4.4.2.1. </span>Mulliken電荷<a class="headerlink" href="#mulliken" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>Mullikenの電子数解析において、原子 <span class="math notranslate nohighlight">\(A\)</span> に属する電子数 <span class="math notranslate nohighlight">\(Q_{A}\)</span> は以下の式によって得られる。</p>
+<div class="math notranslate nohighlight">
+\[Q_{A} = \sum_{p}\sum_{q \in A}{P_{pq} S_{pq}}\]</div>
+<p>ここで <span class="math notranslate nohighlight">\(\boldsymbol{P}\)</span> は密度行列、 <span class="math notranslate nohighlight">\({\boldsymbol{S}}\)</span> は重なり積分をあらわす。
+したがって原子 <span class="math notranslate nohighlight">\(A\)</span> のMulliken電荷 <span class="math notranslate nohighlight">\({q_{A}}\)</span> は、原子核の電荷 <span class="math notranslate nohighlight">\(Z_{A}\)</span> を用いて次のようにあらわされる。</p>
+<div class="math notranslate nohighlight">
+\[q_{A} = Z_{A} - Q_{A}\]</div>
+<p>Mulliken電荷は基底関数依存性があるものの、簡単に計算できるため、計算結果のチェックに便利である。</p>
+<p>Gaussianでは、&quot;Mulliken charges:&quot;以下に出力される。</p>
+</div>
+</div>
+<div class="section" id="id12">
+<h3><span class="section-number">4.4.3. </span>さらなる利活用のために<a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Gaussianは非常に多機能である。キーワードは <a class="reference external" href="https://gaussian.com/keywords/">Gaussianのページ</a> (日本語は <a class="reference external" href="https://www.hpc.co.jp/chem/software/gaussian/help/keywords/">HPCシステムズ(株)のページ</a> )を参照のこと。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="practice2.html" class="btn btn-neutral float-left" title="3. 量子化学計算の応用演習" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 著作権 2020, Toshiyuki Hirano
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
