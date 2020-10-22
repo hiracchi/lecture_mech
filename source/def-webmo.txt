@@ -7,3 +7,4 @@
 .. |webmo-refresh-icon| image:: ./img/webmo-refresh-icon.gif
 .. |webmo-preferences-icon| image:: ./img/webmo-preferences-icon.png
 .. |webmo-home-icon| image:: ./img/webmo-home-icon.gif
+.. |webmo-animate-icon| image:: ./img/webmo-animate-icon.gif

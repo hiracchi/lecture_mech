@@ -89,3 +89,4 @@ Preview
 
 - 左側"Actions"にある |webmo-output-icon| :guilabel:`Raw output` をクリックすると、計算の全出力(生データ)が表示される。
 - 等値面(isosurface)の値は、 |webmo-preferences-icon| をクリックして、"Preferences" ダイアログから変更できる。
+- "Natural Population Analysis" では、 |webmo-output-icon| をクリックすると、電荷に応じて原子が色付けされる。

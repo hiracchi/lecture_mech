@@ -57,27 +57,32 @@ Gaussianの使い方
 ここで :math:`S` は分子の全スピンをあらわし、 :math:`α=+1/2, β=-1/2` である。
 
 
+出力ファイル
+============
 
 
 Mulliken電荷
 ------------
 
 
-Mulliken電荷は以下の式によって得られる。
-
+Mullikenの電子数解析において、原子 :math:`A` に属する電子数 :math:`Q_{A}` は以下の式によって得られる。
 
 .. math::
 
-    hogehoge
+    Q_{A} = \sum_{p}\sum_{q \in A}{P_{pq} S_{pq}}
+
+
+ここで :math:`\boldsymbol{P}` は密度行列、 :math:`{\boldsymbol{S}}` は重なり積分をあらわす。
+したがって原子 :math:`A` のMulliken電荷 :math:`{q_{A}}` は、原子核の電荷 :math:`Z_{A}` を用いて次のようにあらわされる。
+
+.. math::
+
+    q_{A} = Z_{A} - Q_{A}
 
 
 Mulliken電荷は基底関数依存性があるものの、簡単に計算できるため、計算結果のチェックに便利である。
 
-Gaussianのでは、"Mulliken charges:"以下に出力される。
-=======
-出力ファイル
-============
-
+Gaussianでは、"Mulliken charges:"以下に出力される。
 
 
 さらなる利活用のために
