@@ -182,6 +182,11 @@ Gaussianによる構造最適化
    .. image:: ./img/O2-singlet-diagram.png
 
 
+.. note::
+
+   一重項、三重項については、:ref:`スピン多重度 <multiplicity>` を参照。
+
+
 炭化水素のモデリングと構造最適化
 ================================
 
