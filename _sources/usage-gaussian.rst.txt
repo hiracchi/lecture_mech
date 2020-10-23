@@ -11,21 +11,11 @@ Gaussianの使い方
 
 ホルムアルデヒドの入力ファイルを以下に示す。
 
-.. code-block:: none
-    :linenos:
-    :caption: CH2O.gjf
 
-    %chk=form.chk
-    #P B3LYP/6-31G(d) SP Pop=Full GFInput
-
-    CH2O
-
-    0 1
-    C  0.00000000  0.00000000  0.00000000
-    O  0.00000000  0.00000000  1.20651800
-    H  0.00000000  0.93772900 -0.59467900
-    H -0.00000000 -0.93772900 -0.59467900
-
+.. literalinclude:: files/CH2O.gjf
+   :language: none
+   :linenos:
+   :caption: CH2O.gjf
 
 
 + (1行目) "link 0 コマンドセクション"とよばれ、チェックポイントファイルの指定や並列計算の指定を行う。記入しなくても構わない。
