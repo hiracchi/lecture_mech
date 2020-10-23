@@ -36,6 +36,9 @@ Gaussianの使い方
     Gaussian入力ファイルの拡張子は、``.gjf`` (Gaussian Job File) が推奨されているようである(Windows版でのデフォルト)が、 ``.com`` なども散見する。
 
 
+.. _multiplicity:
+
+
 スピン多重度
 ^^^^^^^^^^^^
 
