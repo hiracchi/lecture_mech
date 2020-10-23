@@ -22,7 +22,7 @@ copyright = '2020, Toshiyuki Hirano'
 author = 'Toshiyuki Hirano'
 
 # The full version, including alpha/beta/rc tags
-version = '2020.10.20'
+version = '2020.10.23'
 release = '2020'
 
 

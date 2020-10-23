@@ -4,6 +4,7 @@
 .. |webmo-comprehensive-cleanup-icon| image:: ./img/webmo-comprehensive-cleanup-icon.png
 .. |webmo-next-icon| image:: ./img/webmo-next.gif
 .. |webmo-output-icon| image:: ./img/webmo-output.gif
+.. |webmo-view-icon| image:: ./img/webmo-view-icon.gif
 .. |webmo-refresh-icon| image:: ./img/webmo-refresh-icon.gif
 .. |webmo-preferences-icon| image:: ./img/webmo-preferences-icon.png
 .. |webmo-home-icon| image:: ./img/webmo-home-icon.gif

@@ -38,19 +38,17 @@
 
 + 以下の内容をコピーしてメモ帳などにペーストし、適当な名前(例えば"CH2O.gjf")で保存する。
 
-.. code-block:: none
+
+.. literalinclude:: files/CH2O.gjf
+   :language: none
    :linenos:
    :caption: CH2O.gjf
 
-   #P B3LYP/6-31G(d) SP Pop=Full GFInput
 
-   CH2O
+.. warning::
 
-   0 1
-   C  0.00000000  0.00000000  0.00000000
-   O  0.00000000  0.00000000  1.20651800
-   H  0.00000000  0.93772900 -0.59467900
-   H -0.00000000 -0.93772900 -0.59467900
+   最後の空行が無いとエラーになる。
+
 
 
 + WebMOの"Job Manager"で、 :menuselection:`New Job --> Execute Input File` を選択する。"Execute Input File" に移る。
@@ -60,7 +58,7 @@
 + :guilabel:`Choose Engine` タブは自由にメモが書き込める(入力しなくても良い)。
 + :guilabel:`Execute Job` ボタンをクリックすると計算が "Job Manager" に登録され、実行される。
 + "Job Manager" の該当するジョブが計算完了("Complete")したのを確認する。 未完了の場合は、 |webmo-refresh-icon| :guilabel:`Refresh` をクリックしてジョブの状況を随時更新する。
-+ 該当するジョブの |webmo-output-icon| をクリックして、計算結果を確認する。
++ 該当するジョブの |webmo-view-icon| をクリックして、計算結果を確認する。
 + 全エネルギーは "Calculated Quantities"の"Overview"にある、"RB3LYP Energy"に記載されている。
 
 
@@ -78,14 +76,14 @@
 --------------------------------------------
 
 
-- "Overview"の”Dipole Moment"にある |webmo-output-icon| をクリックする。ホルムアルデヒドの場合、炭素から酸素へ矢印が描かれていることを確認する。
+- "Overview"の”Dipole Moment"にある |webmo-view-icon| をクリックする。ホルムアルデヒドの場合、炭素から酸素へ矢印が描かれていることを確認する。
 
 
 ホルムアルデヒドの分子軌道を表示する
 ------------------------------------
 
 
-- "Molecular Orbitals" の |webmo-output-icon| をクリックすると、分子軌道が可視化される。
+- "Molecular Orbitals" の |webmo-view-icon| をクリックすると、分子軌道が可視化される。
 - "Orbital" はエネルギーが低い順番にナンバリングされている。
 - "Occupancy" は該当する分子軌道に入っている電子数を表している。2つの電子が入っている分子軌道を占有軌道、電子が入っていない分子軌道を空軌道とよぶ。
 - 最もエネルギーの高い占有軌道をHOMO (Highest Occupaied Molecular Orbital)、最もエネルギーの低い空軌道をLUMO (Lowest Unoccupaied Molecular Orbital)とよぶ。これらはフロンティア軌道ともよばれ、様々な化学反応に関与することが知られている。
@@ -95,14 +93,14 @@
 ------------------------------------
 
 
-- "Electron density" の |webmo-output-icon| をクリックすると、等電子密度面が可視化される。
+- "Electron density" の |webmo-view-icon| をクリックすると、等電子密度面が可視化される。
 
 
 ホルムアルデヒドの静電ポテンシャルを表示する
 --------------------------------------------
 
 
-- "Electrostatic potential" の |webmo-output-icon| をクリックすると、分子表面に静電ポテンシャルが可視化される。
+- "Electrostatic potential" の |webmo-view-icon| をクリックすると、分子表面に静電ポテンシャルが可視化される。
 
 
 .. note::
@@ -115,7 +113,7 @@
 
 
 - "Job Option" の "Calculation" で "Vibrational Frequencies" を選択する。もしくはGaussianのルートセクションに "FREQ" キーワードを追加する。
-- 計算が完了したら、"Vibrational Modes" にある "Raman Spectrum" や "IR Spectrum" の  |webmo-output-icon| をクリックすると "Data viewer" にスペクトルが描画される。
+- 計算が完了したら、"Vibrational Modes" にある "Raman Spectrum" や "IR Spectrum" の  |webmo-view-icon| をクリックすると "Data viewer" にスペクトルが描画される。
 - 各振動モードの |webmo-animate-icon| をクリックすると、振動モードがアニメーション表示される。止めたい場合は、左の停止ボタンをクリックする。  
 
 
@@ -124,7 +122,7 @@
 
 
 - "Job Option" の "Calculation" で "NMR" を選択する。もしくはGaussianのルートセクションに "NMR" キーワードを追加する。
-- 計算が完了したら、"Absolute NMR Shifts" にある " :sup:`1`\ H NMR Spectrum" や " :sup:`13`\ C NMR Spectrum" の  |webmo-output-icon| をクリックすると "Data viewer" にスペクトルが描画される。
+- 計算が完了したら、"Absolute NMR Shifts" にある " :sup:`1`\ H NMR Spectrum" や " :sup:`13`\ C NMR Spectrum" の  |webmo-view-icon| をクリックすると "Data viewer" にスペクトルが描画される。
 
 
 ホルムアルデヒドのUV-visスペクトルを予測する
@@ -132,7 +130,7 @@
 
 
 - "Job Option" の "Calculation" で "Excited states and UV-VIS" を選択する。UV-visスペクトルには励起状態計算が必要なため、自動的に "Excited State Method" に "CIS"が選択される。
-- "Excited States" にある "UV-Vis Spectrum" の |webmo-output-icon| をクリックすると "Data viewer" にスペクトルが描画される。
+- "Excited States" にある "UV-Vis Spectrum" の |webmo-view-icon| をクリックすると "Data viewer" にスペクトルが描画される。
 
 
 窒素分子(N\ :sub:`2`)のモデリングと構造最適化
