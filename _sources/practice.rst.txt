@@ -50,7 +50,6 @@
    最後の空行が無いとエラーになる。
 
 
-
 + WebMOの"Job Manager"で、 :menuselection:`New Job --> Execute Input File` を選択する。"Execute Input File" に移る。
 + :guilabel:`Input File` タブで、下部にある :guilabel:`ファイルを選択` ボタンから、上記で保存したファイルを選択してアップロードする。内容が正しくアップロードされているか確認する。
 + :guilabel:`Job Name` には任意の名前(例えば"CH2O sp")を入力する。
@@ -112,6 +111,7 @@
 -----------------------------------------------
 
 
+- 以前の計算結果の分子構造を使って計算する場合は、下部の |webmo-next-icon| を適宜クリックすると便利である。
 - "Job Option" の "Calculation" で "Vibrational Frequencies" を選択する。もしくはGaussianのルートセクションに "FREQ" キーワードを追加する。
 - 計算が完了したら、"Vibrational Modes" にある "Raman Spectrum" や "IR Spectrum" の  |webmo-view-icon| をクリックすると "Data viewer" にスペクトルが描画される。
 - 各振動モードの |webmo-animate-icon| をクリックすると、振動モードがアニメーション表示される。止めたい場合は、左の停止ボタンをクリックする。  
