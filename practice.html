@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2020.10.20
+                2020.10.23
               </div>
             
           
@@ -210,15 +210,16 @@
 </ul>
 <div class="literal-block-wrapper docutils container" id="id13">
 <div class="code-block-caption"><span class="caption-number">リスト 2.1 </span><span class="caption-text">CH2O.gjf</span><a class="headerlink" href="#id13" title="このコードへのパーマリンク">¶</a></div>
-<div class="highlight-none notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="highlight"><pre><span></span>#P B3LYP/6-31G(d) SP Pop=Full GFInput
+<div class="highlight-none notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span>#P B3LYP/6-31G(d) SP Pop=Full GFInput
 
 CH2O
 
@@ -227,8 +228,13 @@ C  0.00000000  0.00000000  0.00000000
 O  0.00000000  0.00000000  1.20651800
 H  0.00000000  0.93772900 -0.59467900
 H -0.00000000 -0.93772900 -0.59467900
+
 </pre></div>
 </td></tr></table></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>最後の空行が無いとエラーになる。</p>
 </div>
 <ul class="simple">
 <li><p>WebMOの&quot;Job Manager&quot;で、 <span class="menuselection">New Job ‣ Execute Input File</span> を選択する。&quot;Execute Input File&quot; に移る。</p></li>
@@ -238,7 +244,7 @@ H -0.00000000 -0.93772900 -0.59467900
 <li><p><span class="guilabel">Choose Engine</span> タブは自由にメモが書き込める(入力しなくても良い)。</p></li>
 <li><p><span class="guilabel">Execute Job</span> ボタンをクリックすると計算が &quot;Job Manager&quot; に登録され、実行される。</p></li>
 <li><p>&quot;Job Manager&quot; の該当するジョブが計算完了(&quot;Complete&quot;)したのを確認する。 未完了の場合は、 <img alt="webmo-refresh-icon" src="_images/webmo-refresh-icon.gif" /> <span class="guilabel">Refresh</span> をクリックしてジョブの状況を随時更新する。</p></li>
-<li><p>該当するジョブの <img alt="webmo-output-icon" src="_images/webmo-output.gif" /> をクリックして、計算結果を確認する。</p></li>
+<li><p>該当するジョブの <img alt="webmo-view-icon" src="_images/webmo-view-icon.gif" /> をクリックして、計算結果を確認する。</p></li>
 <li><p>全エネルギーは &quot;Calculated Quantities&quot;の&quot;Overview&quot;にある、&quot;RB3LYP Energy&quot;に記載されている。</p></li>
 </ul>
 <div class="admonition note">
@@ -252,13 +258,13 @@ WebMOでは、&quot;Job Options&quot; で &quot;Theory&quot; には &quot;B3LYP&
 <div class="section" id="id5">
 <h3><span class="section-number">2.1.3. </span>ホルムアルデヒドの双極子モーメントを表示する<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
-<li><p>&quot;Overview&quot;の”Dipole Moment&quot;にある <img alt="webmo-output-icon" src="_images/webmo-output.gif" /> をクリックする。ホルムアルデヒドの場合、炭素から酸素へ矢印が描かれていることを確認する。</p></li>
+<li><p>&quot;Overview&quot;の”Dipole Moment&quot;にある <img alt="webmo-view-icon" src="_images/webmo-view-icon.gif" /> をクリックする。ホルムアルデヒドの場合、炭素から酸素へ矢印が描かれていることを確認する。</p></li>
 </ul>
 </div>
 <div class="section" id="id6">
 <h3><span class="section-number">2.1.4. </span>ホルムアルデヒドの分子軌道を表示する<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
-<li><p>&quot;Molecular Orbitals&quot; の <img alt="webmo-output-icon" src="_images/webmo-output.gif" /> をクリックすると、分子軌道が可視化される。</p></li>
+<li><p>&quot;Molecular Orbitals&quot; の <img alt="webmo-view-icon" src="_images/webmo-view-icon.gif" /> をクリックすると、分子軌道が可視化される。</p></li>
 <li><p>&quot;Orbital&quot; はエネルギーが低い順番にナンバリングされている。</p></li>
 <li><p>&quot;Occupancy&quot; は該当する分子軌道に入っている電子数を表している。2つの電子が入っている分子軌道を占有軌道、電子が入っていない分子軌道を空軌道とよぶ。</p></li>
 <li><p>最もエネルギーの高い占有軌道をHOMO (Highest Occupaied Molecular Orbital)、最もエネルギーの低い空軌道をLUMO (Lowest Unoccupaied Molecular Orbital)とよぶ。これらはフロンティア軌道ともよばれ、様々な化学反応に関与することが知られている。</p></li>
@@ -267,13 +273,13 @@ WebMOでは、&quot;Job Options&quot; で &quot;Theory&quot; には &quot;B3LYP&
 <div class="section" id="id7">
 <h3><span class="section-number">2.1.5. </span>ホルムアルデヒドの電子密度を表示する<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
-<li><p>&quot;Electron density&quot; の <img alt="webmo-output-icon" src="_images/webmo-output.gif" /> をクリックすると、等電子密度面が可視化される。</p></li>
+<li><p>&quot;Electron density&quot; の <img alt="webmo-view-icon" src="_images/webmo-view-icon.gif" /> をクリックすると、等電子密度面が可視化される。</p></li>
 </ul>
 </div>
 <div class="section" id="id8">
 <h3><span class="section-number">2.1.6. </span>ホルムアルデヒドの静電ポテンシャルを表示する<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
-<li><p>&quot;Electrostatic potential&quot; の <img alt="webmo-output-icon" src="_images/webmo-output.gif" /> をクリックすると、分子表面に静電ポテンシャルが可視化される。</p></li>
+<li><p>&quot;Electrostatic potential&quot; の <img alt="webmo-view-icon" src="_images/webmo-view-icon.gif" /> をクリックすると、分子表面に静電ポテンシャルが可視化される。</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
@@ -284,7 +290,7 @@ WebMOでは、&quot;Job Options&quot; で &quot;Theory&quot; には &quot;B3LYP&
 <h3><span class="section-number">2.1.7. </span>ホルムアルデヒドのIR, Ramanスペクトルを予測する<a class="headerlink" href="#ir-raman" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
 <li><p>&quot;Job Option&quot; の &quot;Calculation&quot; で &quot;Vibrational Frequencies&quot; を選択する。もしくはGaussianのルートセクションに &quot;FREQ&quot; キーワードを追加する。</p></li>
-<li><p>計算が完了したら、&quot;Vibrational Modes&quot; にある &quot;Raman Spectrum&quot; や &quot;IR Spectrum&quot; の  <img alt="webmo-output-icon" src="_images/webmo-output.gif" /> をクリックすると &quot;Data viewer&quot; にスペクトルが描画される。</p></li>
+<li><p>計算が完了したら、&quot;Vibrational Modes&quot; にある &quot;Raman Spectrum&quot; や &quot;IR Spectrum&quot; の  <img alt="webmo-view-icon" src="_images/webmo-view-icon.gif" /> をクリックすると &quot;Data viewer&quot; にスペクトルが描画される。</p></li>
 <li><p>各振動モードの <img alt="webmo-animate-icon" src="_images/webmo-animate-icon.gif" /> をクリックすると、振動モードがアニメーション表示される。止めたい場合は、左の停止ボタンをクリックする。</p></li>
 </ul>
 </div>
@@ -292,14 +298,14 @@ WebMOでは、&quot;Job Options&quot; で &quot;Theory&quot; には &quot;B3LYP&
 <h3><span class="section-number">2.1.8. </span>ホルムアルデヒドのNMRスペクトルを予測する<a class="headerlink" href="#nmr" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
 <li><p>&quot;Job Option&quot; の &quot;Calculation&quot; で &quot;NMR&quot; を選択する。もしくはGaussianのルートセクションに &quot;NMR&quot; キーワードを追加する。</p></li>
-<li><p>計算が完了したら、&quot;Absolute NMR Shifts&quot; にある &quot; <sup>1</sup>H NMR Spectrum&quot; や &quot; <sup>13</sup>C NMR Spectrum&quot; の  <img alt="webmo-output-icon" src="_images/webmo-output.gif" /> をクリックすると &quot;Data viewer&quot; にスペクトルが描画される。</p></li>
+<li><p>計算が完了したら、&quot;Absolute NMR Shifts&quot; にある &quot; <sup>1</sup>H NMR Spectrum&quot; や &quot; <sup>13</sup>C NMR Spectrum&quot; の  <img alt="webmo-view-icon" src="_images/webmo-view-icon.gif" /> をクリックすると &quot;Data viewer&quot; にスペクトルが描画される。</p></li>
 </ul>
 </div>
 <div class="section" id="uv-vis">
 <h3><span class="section-number">2.1.9. </span>ホルムアルデヒドのUV-visスペクトルを予測する<a class="headerlink" href="#uv-vis" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
 <li><p>&quot;Job Option&quot; の &quot;Calculation&quot; で &quot;Excited states and UV-VIS&quot; を選択する。UV-visスペクトルには励起状態計算が必要なため、自動的に &quot;Excited State Method&quot; に &quot;CIS&quot;が選択される。</p></li>
-<li><p>&quot;Excited States&quot; にある &quot;UV-Vis Spectrum&quot; の <img alt="webmo-output-icon" src="_images/webmo-output.gif" /> をクリックすると &quot;Data viewer&quot; にスペクトルが描画される。</p></li>
+<li><p>&quot;Excited States&quot; にある &quot;UV-Vis Spectrum&quot; の <img alt="webmo-view-icon" src="_images/webmo-view-icon.gif" /> をクリックすると &quot;Data viewer&quot; にスペクトルが描画される。</p></li>
 </ul>
 </div>
 </div>
